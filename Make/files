@@ -1,0 +1,6 @@
+myAdvective/myAdvectiveFvPatchFields.C
+
+myWaveTransmissive/myWaveTransmissiveFvPatchFields.C
+
+
+LIB = $(FOAM_LIBBIN)/libmyBCs
