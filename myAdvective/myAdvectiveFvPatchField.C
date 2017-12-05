@@ -88,7 +88,6 @@ Foam::myAdvectiveFvPatchField<Type>::myAdvectiveFvPatchField
     fieldInf_(Function1<Type>::New("fieldInf", dict)),
     lInf_(-GREAT)
 {
-	Info << "This is called 3" << "\n";
     if (dict.found("value"))
     {
         fvPatchField<Type>::operator=
@@ -188,7 +187,6 @@ Foam::myAdvectiveFvPatchField<Type>::advectionSpeed() const
 template<class Type>
 void Foam::myAdvectiveFvPatchField<Type>::updateCoeffs()
 {
-//	Info << "This is called 7" << "\n";
     if (this->updated())
     {
         return;
@@ -220,12 +218,6 @@ void Foam::myAdvectiveFvPatchField<Type>::updateCoeffs()
 
     // For use with the interplated table values of fielInf
     const scalar t = this->db().time().timeOutputValue();
-
-//    Info << "\n";
-//    Info << "timeOutputValue:" << t << "\n";
-//    Info << "fieldInf of patch: "<< this->patch().name() << ", value: " << fieldInf_->value(t) << "\n";
-//    Info << "Write data:  " << fieldInf_();
-//    Info << "\n";
 
     // Non-reflecting outflow boundary
     // If lInf_ defined setup relaxation to the value fieldInf_.
@@ -350,7 +342,6 @@ void Foam::myAdvectiveFvPatchField<Type>::updateCoeffs()
 template<class Type>
 void Foam::myAdvectiveFvPatchField<Type>::write(Ostream& os) const
 {
-	Info << "This is called 8" << "\n";
     fvPatchField<Type>::write(os);
 
     this->template writeEntryIfDifferent<word>(os, "phi", "phi", phiName_);
