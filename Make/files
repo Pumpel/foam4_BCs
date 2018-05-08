@@ -2,5 +2,6 @@ myAdvective/myAdvectiveFvPatchFields.C
 myWaveTransmissive/myWaveTransmissiveFvPatchFields.C
 uniformPrghTotalPressure/uniformPrghTotalPressureFvPatchScalarField.C
 
+myPrghTotalPressure/myPrghTotalPressureFvPatchScalarField.C
 
 LIB = $(FOAM_LIBBIN)/libmyBCs
